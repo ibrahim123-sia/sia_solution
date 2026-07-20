@@ -12,8 +12,10 @@ const ServiceCard = ({ service }) => {
         <Icon size={22} />
       </div>
       <h3 className="font-display font-semibold text-lg text-charcoal mb-2">{service.title}</h3>
-      <p className="text-charcoal/60 text-sm leading-relaxed mb-4">{service.description}</p>
-      <span className="inline-block text-amber font-semibold text-sm">{service.price}</span>
+      <p className="text-charcoal/60 text-sm leading-relaxed mb-5">{service.description}</p>
+      <div className="pt-4 border-t border-cream-line">
+        <span className="inline-block text-amber font-semibold text-sm tracking-wide">{service.price}</span>
+      </div>
     </div>
   );
 };

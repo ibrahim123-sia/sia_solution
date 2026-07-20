@@ -18,9 +18,12 @@ const Work = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-8 mb-20">
+        <div className="flex flex-col mb-24">
           {siteData.clientProjects.map((project, i) => (
-            <ClientProjectCard key={project.id} project={project} reverse={i % 2 === 1} />
+            <React.Fragment key={project.id}>
+              {i > 0 && <div className="border-t border-cream-line my-16 sm:my-20" />}
+              <ClientProjectCard project={project} reverse={i % 2 === 1} />
+            </React.Fragment>
           ))}
         </div>
 

@@ -5,7 +5,9 @@ import TrustBadges from '../components/TrustBadges';
 
 const BrowserMockup = () => (
   <div className="relative">
-    <div className="rounded-2xl bg-cream shadow-2xl shadow-black/40 overflow-hidden border border-cream-line">
+    <div className="pointer-events-none absolute -inset-4 sm:-inset-6 bg-amber/10 blur-3xl rounded-full" />
+
+    <div className="relative rounded-2xl bg-cream shadow-2xl shadow-black/40 overflow-hidden border border-cream-line">
       <div className="flex items-center gap-2 px-4 py-3 bg-cream-dim border-b border-cream-line">
         <span className="w-2.5 h-2.5 rounded-full bg-amber" />
         <span className="w-2.5 h-2.5 rounded-full bg-amber-light" />
@@ -13,6 +15,10 @@ const BrowserMockup = () => (
         <div className="flex-1 mx-3 bg-white rounded-md px-3 py-1 text-[0.65rem] text-charcoal/50 truncate">
           siasolution.com
         </div>
+        <span className="flex items-center gap-1.5 text-[0.6rem] font-semibold text-charcoal/40 pr-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber" />
+          Live
+        </span>
       </div>
 
       <div className="p-6 sm:p-8">
@@ -29,11 +35,6 @@ const BrowserMockup = () => (
           Get a Free Mockup <ArrowRight size={14} />
         </span>
       </div>
-    </div>
-
-    <div className="absolute -bottom-5 -right-4 sm:-right-8 bg-amber text-cream rounded-xl px-5 py-3 shadow-xl shadow-amber/30 text-center">
-      <p className="text-[0.6rem] tracking-widest opacity-80">STARTING FROM</p>
-      <p className="font-display font-bold text-lg leading-tight">PKR 8,000</p>
     </div>
   </div>
 );
