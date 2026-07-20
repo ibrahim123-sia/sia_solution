@@ -7,8 +7,11 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal border-t border-cream/10">
-      <div className="container mx-auto px-4 sm:px-6 py-12">
+    <footer className="bg-charcoal border-t border-cream/10 relative overflow-hidden">
+      <div className="pointer-events-none absolute -bottom-24 left-1/4 w-72 h-72 bg-amber/5 blur-3xl rounded-full" />
+      <div className="pointer-events-none absolute -top-16 right-10 w-40 h-40 border border-amber/10 rounded-full hidden md:block" />
+
+      <div className="container mx-auto px-4 sm:px-6 py-12 relative z-10">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
             <Logo variant="light" />

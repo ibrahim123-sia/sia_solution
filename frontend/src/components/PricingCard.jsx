@@ -6,8 +6,8 @@ const PricingCard = ({ tier }) => {
     <div
       className={`rounded-2xl p-8 flex flex-col transition-all duration-300 ${
         tier.featured
-          ? 'bg-charcoal text-cream ring-2 ring-amber shadow-xl shadow-amber/10 md:-translate-y-3'
-          : 'bg-white text-charcoal border border-cream-line hover:border-amber/40 hover:shadow-lg hover:shadow-amber/5'
+          ? 'bg-charcoal text-cream ring-2 ring-amber shadow-xl shadow-amber/20 md:-translate-y-3'
+          : 'bg-white text-charcoal border border-cream-line shadow-md shadow-charcoal/[0.06] hover:border-amber/40 hover:shadow-xl hover:shadow-amber/10 hover:-translate-y-0.5'
       }`}
     >
       {tier.featured && (
@@ -38,10 +38,10 @@ const PricingCard = ({ tier }) => {
       </ul>
       <a
         href="#contact"
-        className={`text-center font-semibold text-sm py-3 rounded-lg transition-colors ${
+        className={`text-center font-semibold text-sm py-3 rounded-lg transition-all duration-300 ${
           tier.featured
-            ? 'bg-amber hover:bg-amber-dark text-cream'
-            : 'bg-charcoal/5 hover:bg-amber hover:text-cream text-charcoal'
+            ? 'bg-gradient-to-b from-amber to-amber-dark hover:from-amber-dark hover:to-amber-dark text-cream shadow-md shadow-amber/25 hover:shadow-lg hover:shadow-amber/40'
+            : 'bg-charcoal/5 hover:bg-gradient-to-b hover:from-amber hover:to-amber-dark hover:text-cream text-charcoal hover:shadow-md hover:shadow-amber/25'
         }`}
       >
         Get a Free Mockup

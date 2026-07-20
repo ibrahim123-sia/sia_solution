@@ -10,7 +10,7 @@ const honestyPoints = [
 
 const About = () => {
   return (
-    <section id="about" className="bg-cream py-20 sm:py-28">
+    <section id="about" className="bg-cream-dim py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-14 items-start mb-20">
           <div>
@@ -30,18 +30,23 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-charcoal rounded-2xl p-8 sm:p-10">
-            <h3 className="font-display font-semibold text-cream text-lg mb-6">Why brands trust us early</h3>
-            <ul className="space-y-4">
-              {honestyPoints.map((point) => (
-                <li key={point} className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-amber/20 flex items-center justify-center text-amber flex-shrink-0 mt-0.5">
-                    <Check size={13} />
-                  </span>
-                  <span className="text-cream/70 text-sm leading-relaxed">{point}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="relative overflow-hidden bg-charcoal rounded-2xl p-8 sm:p-10 shadow-xl shadow-charcoal/20">
+            <div className="pointer-events-none absolute -top-12 -right-12 w-40 h-40 border border-amber/10 rounded-full" />
+            <div className="pointer-events-none absolute -bottom-16 -left-10 w-48 h-48 bg-amber/10 blur-3xl rounded-full" />
+
+            <div className="relative z-10">
+              <h3 className="font-display font-semibold text-cream text-lg mb-6">Why brands trust us early</h3>
+              <ul className="space-y-4">
+                {honestyPoints.map((point) => (
+                  <li key={point} className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-gradient-to-br from-amber/30 to-amber/15 ring-1 ring-amber/20 flex items-center justify-center text-amber flex-shrink-0 mt-0.5">
+                      <Check size={13} />
+                    </span>
+                    <span className="text-cream/70 text-sm leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 

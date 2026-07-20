@@ -5,7 +5,7 @@ import ClientProjectCard from '../components/ClientProjectCard';
 
 const Work = () => {
   return (
-    <section id="work" className="bg-cream-dim py-20 sm:py-28">
+    <section id="work" className="bg-gradient-to-b from-cream via-cream to-cream-dim py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mb-14">
           <p className="text-amber text-xs font-semibold tracking-[0.25em] mb-3">OUR WORK</p>

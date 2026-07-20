@@ -37,7 +37,7 @@ const Header = () => {
             ))}
             <a
               href="#contact"
-              className="bg-amber hover:bg-amber-dark text-cream font-semibold text-sm px-5 py-2.5 rounded-md transition-colors"
+              className="bg-gradient-to-b from-amber to-amber-dark hover:from-amber-dark hover:to-amber-dark text-cream font-semibold text-sm px-5 py-2.5 rounded-md shadow-md shadow-amber/25 hover:shadow-lg hover:shadow-amber/40 transition-all duration-300"
             >
               Get in Touch
             </a>

@@ -3,7 +3,7 @@ import { Code2, ExternalLink, Sparkles } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="bg-white rounded-2xl border border-cream-line overflow-hidden hover:border-amber/50 hover:shadow-lg hover:shadow-amber/5 transition-all duration-300 flex flex-col">
+    <div className="bg-white rounded-2xl border border-cream-line overflow-hidden shadow-md shadow-charcoal/[0.06] hover:border-amber/50 hover:shadow-xl hover:shadow-amber/10 hover:-translate-y-0.5 transition-all duration-300 flex flex-col">
       <div className="relative h-44 bg-charcoal flex items-center justify-center overflow-hidden">
         {project.image ? (
           <img

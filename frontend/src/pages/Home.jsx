@@ -31,7 +31,7 @@ const BrowserMockup = () => (
         <p className="text-charcoal/60 text-sm mb-5">
           Clean design. Smooth experience. More trust. More customers.
         </p>
-        <span className="inline-flex items-center gap-2 bg-amber text-cream text-xs font-semibold px-4 py-2.5 rounded-lg">
+        <span className="inline-flex items-center gap-2 bg-gradient-to-b from-amber to-amber-dark text-cream text-xs font-semibold px-4 py-2.5 rounded-lg shadow-md shadow-amber/25">
           Get a Free Mockup <ArrowRight size={14} />
         </span>
       </div>
@@ -61,7 +61,7 @@ const Home = () => {
             <div className="flex flex-wrap gap-4 mb-10">
               <a
                 href={hero.primaryCta.href}
-                className="bg-amber hover:bg-amber-dark text-cream font-semibold text-sm px-7 py-3.5 rounded-lg transition-colors inline-flex items-center gap-2"
+                className="bg-gradient-to-b from-amber to-amber-dark hover:from-amber-dark hover:to-amber-dark text-cream font-semibold text-sm px-7 py-3.5 rounded-lg shadow-lg shadow-amber/25 hover:shadow-xl hover:shadow-amber/40 transition-all duration-300 inline-flex items-center gap-2"
               >
                 {hero.primaryCta.label} <ArrowRight size={16} />
               </a>

@@ -45,7 +45,7 @@ const ContactForm = () => {
 
         <div className="space-y-5">
           <div className="flex items-start gap-4">
-            <div className="w-11 h-11 rounded-lg bg-amber/10 flex items-center justify-center text-amber flex-shrink-0">
+            <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-amber/25 to-amber/10 ring-1 ring-amber/15 flex items-center justify-center text-amber flex-shrink-0">
               <Mail size={18} />
             </div>
             <div>
@@ -57,7 +57,7 @@ const ContactForm = () => {
           </div>
 
           <div className="flex items-start gap-4">
-            <div className="w-11 h-11 rounded-lg bg-amber/10 flex items-center justify-center text-amber flex-shrink-0">
+            <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-amber/25 to-amber/10 ring-1 ring-amber/15 flex items-center justify-center text-amber flex-shrink-0">
               <Phone size={18} />
             </div>
             <div>
@@ -67,7 +67,7 @@ const ContactForm = () => {
           </div>
 
           <div className="flex items-start gap-4">
-            <div className="w-11 h-11 rounded-lg bg-amber/10 flex items-center justify-center text-amber flex-shrink-0">
+            <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-amber/25 to-amber/10 ring-1 ring-amber/15 flex items-center justify-center text-amber flex-shrink-0">
               <MapPin size={18} />
             </div>
             <div>
@@ -77,25 +77,28 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <div className="mt-8 p-6 bg-charcoal rounded-xl">
-          <div className="flex items-center mb-4">
-            <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center mr-3">
-              <MessageCircle className="w-5 h-5 text-white" fill="white" />
+        <div className="mt-8 p-6 bg-charcoal rounded-xl relative overflow-hidden shadow-xl shadow-charcoal/20">
+          <div className="pointer-events-none absolute -top-10 -right-10 w-32 h-32 bg-amber/10 blur-3xl rounded-full" />
+          <div className="relative z-10">
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center mr-3">
+                <MessageCircle className="w-5 h-5 text-white" fill="white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-cream text-sm">Quick Chat</h4>
+                <p className="text-xs text-cream/50">Typically replies within minutes</p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-semibold text-cream text-sm">Quick Chat</h4>
-              <p className="text-xs text-cream/50">Typically replies within minutes</p>
-            </div>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-gradient-to-b from-amber to-amber-dark hover:from-amber-dark hover:to-amber-dark text-cream font-medium text-sm py-3 px-6 rounded-lg shadow-md shadow-amber/25 hover:shadow-lg hover:shadow-amber/40 transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <MessageCircle size={16} />
+              <span>Chat on WhatsApp</span>
+            </a>
           </div>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full bg-amber hover:bg-amber-dark text-cream font-medium text-sm py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
-          >
-            <MessageCircle size={16} />
-            <span>Chat on WhatsApp</span>
-          </a>
         </div>
       </div>
 
@@ -146,7 +149,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-amber hover:bg-amber-dark disabled:bg-amber/50 text-cream font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-b from-amber to-amber-dark hover:from-amber-dark hover:to-amber-dark disabled:from-amber/50 disabled:to-amber/50 disabled:shadow-none text-cream font-medium py-3 px-6 rounded-lg shadow-md shadow-amber/25 hover:shadow-lg hover:shadow-amber/40 transition-all duration-300 flex items-center justify-center gap-2 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <>

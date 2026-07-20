@@ -10,7 +10,7 @@ const ClientProjectCard = ({ project, reverse }) => {
         {/* Screenshot — single hero shot in a consistent browser-chrome frame so every
             raw client screenshot (different aspect ratios/colors) reads as one polished system. */}
         <div className={`lg:col-span-7 ${reverse ? 'lg:order-2' : ''}`}>
-          <div className="rounded-xl bg-white border border-cream-line shadow-sm shadow-black/5 overflow-hidden">
+          <div className="rounded-xl bg-white border border-cream-line shadow-lg shadow-charcoal/10 overflow-hidden">
             <div className="flex items-center gap-1.5 px-4 py-2.5 bg-cream-dim border-b border-cream-line">
               <span className="w-2 h-2 rounded-full bg-amber/60" />
               <span className="w-2 h-2 rounded-full bg-amber-light/60" />
@@ -60,7 +60,7 @@ const ClientProjectCard = ({ project, reverse }) => {
               href={project.liveDemo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs font-semibold bg-amber hover:bg-amber-dark text-cream px-4 py-2.5 rounded-lg transition-colors"
+              className="flex items-center gap-1.5 text-xs font-semibold bg-gradient-to-b from-amber to-amber-dark hover:from-amber-dark hover:to-amber-dark text-cream px-4 py-2.5 rounded-lg shadow-md shadow-amber/25 hover:shadow-lg hover:shadow-amber/40 transition-all duration-300"
             >
               <ExternalLink size={14} /> View Live Site
             </a>
@@ -79,7 +79,7 @@ const ClientProjectCard = ({ project, reverse }) => {
       {/* Testimonial — pulled out of the card into its own quiet block so it doesn't
           compete with the case-study facts above; matches how agencies separate proof from spec. */}
       <div className={`mt-10 lg:mt-12 max-w-2xl ${reverse ? 'lg:ml-auto' : ''}`}>
-        <div className="bg-white rounded-xl border border-cream-line p-6 sm:p-7 flex gap-4">
+        <div className="bg-white rounded-xl border border-cream-line p-6 sm:p-7 flex gap-4 shadow-md shadow-charcoal/[0.06]">
           <Quote className="text-amber/50 flex-shrink-0" size={20} />
           <div>
             <p className="text-charcoal/70 text-sm sm:text-[0.95rem] italic leading-relaxed mb-3">

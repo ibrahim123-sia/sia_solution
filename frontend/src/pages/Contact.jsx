@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-cream-dim py-20 sm:py-28">
+    <section id="contact" className="bg-cream py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mb-14">
           <p className="text-amber text-xs font-semibold tracking-[0.25em] mb-3">GET IN TOUCH</p>
