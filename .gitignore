@@ -20,3 +20,12 @@ npm-debug.log*
 .idea/
 .DS_Store
 Thumbs.db
+
+# Raw client assets (screenshots/links dump, not part of the built site)
+/Images/
+
+# AI tooling — never commit assistant config/context files
+.claude/
+CLAUDE.md
+.cursor/
+.windsurf/

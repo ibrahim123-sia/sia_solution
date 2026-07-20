@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteData } from '../data';
 import ProjectCard from '../components/ProjectCard';
+import ClientProjectCard from '../components/ClientProjectCard';
 
 const Work = () => {
   return (
@@ -9,12 +10,25 @@ const Work = () => {
         <div className="max-w-2xl mb-14">
           <p className="text-amber text-xs font-semibold tracking-[0.25em] mb-3">OUR WORK</p>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal mb-4">
-            Websites, chatbots and AI agents we've built.
+            Real stores we've built for real clients.
           </h2>
           <p className="text-charcoal/60 text-base">
-            A look at real systems — from customer-facing online stores to AI assistants that
-            reason over data and automate work.
+            Live e-commerce platforms — from storefront to admin dashboard — built for brands
+            who trusted us with their launch, plus AI assistants and agents from our own R&D.
           </p>
+        </div>
+
+        <div className="flex flex-col gap-8 mb-20">
+          {siteData.clientProjects.map((project, i) => (
+            <ClientProjectCard key={project.id} project={project} reverse={i % 2 === 1} />
+          ))}
+        </div>
+
+        <div className="max-w-2xl mb-10">
+          <p className="text-amber text-xs font-semibold tracking-[0.25em] mb-3">MORE FROM OUR STUDIO</p>
+          <h3 className="font-display font-bold text-2xl sm:text-3xl text-charcoal">
+            AI assistants and agents we've built in-house.
+          </h3>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

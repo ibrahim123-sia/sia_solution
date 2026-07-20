@@ -1,8 +1,23 @@
 import UniAssist from './assets/UniAssist.svg';
 import Nochat from './assets/Nochat.jpeg';
-import Nowhere from './assets/Nowhere.jpeg';
 import LPR from './assets/LPR.jpeg';
 import SSP from './assets/SSP.jpeg';
+
+import hoorHero from './assets/projects/hoor-hero.jpeg';
+import hoorProduct from './assets/projects/hoor-product.jpeg';
+import hoorNewsletter from './assets/projects/hoor-newsletter.jpeg';
+
+import zephyrHero from './assets/projects/zephyr-hero.jpeg';
+import zephyrBestseller from './assets/projects/zephyr-bestseller.jpeg';
+import zephyrFilters from './assets/projects/zephyr-filters.jpeg';
+
+import naqshHero from './assets/projects/naqsh-hero.jpeg';
+import naqshWedding from './assets/projects/naqsh-wedding.jpeg';
+import naqshProduct from './assets/projects/naqsh-product.jpeg';
+
+import nowhereHero from './assets/projects/nowhere-hero.jpeg';
+import nowhereBestseller from './assets/projects/nowhere-bestseller.jpeg';
+import nowhereTopwear from './assets/projects/nowhere-topwear.jpeg';
 
 export const siteData = {
   company: {
@@ -123,6 +138,66 @@ export const siteData = {
     { step: '04', title: 'You Pay & We Support', desc: "Happy with it? You pay once it's live — and we stay on for ongoing support." },
   ],
 
+  // Flagship client stores — shown first on the Work page as full case studies.
+  clientProjects: [
+    {
+      id: 'hoor',
+      title: "Hoor — Women's Clothing Store",
+      client: 'Yasmeen Hamid',
+      description:
+        "A full online storefront for Hoor's clothing brand — hero landing, best-sellers and new arrivals, category-filtered catalog, product detail pages, cart and a newsletter signup, all wrapped in a fast, mobile-first build.",
+      technologies: ['React', 'Vite', 'Tailwind CSS'],
+      github: 'https://github.com/ibrahim123-sia/Hoor',
+      liveDemo: 'https://hoorfatima.vercel.app/',
+      category: 'Online Store',
+      images: [hoorHero, hoorProduct, hoorNewsletter],
+      testimonial:
+        "SIA Solution understood exactly what Hoor needed — the site looks premium and my customers keep complimenting how easy it is to shop on it.",
+    },
+    {
+      id: 'zephyr',
+      title: 'Zephyr — Perfume E-Commerce',
+      client: 'Adnan Malik Kamal',
+      description:
+        "A complete fragrance store for men's and women's collections — smart filtering by scent and side panel, JazzCash checkout, order confirmation emails and a full admin panel to manage products and orders.",
+      technologies: ['React', 'Redux Toolkit', 'Node.js', 'MongoDB', 'JazzCash'],
+      github: 'https://github.com/ibrahim123-sia/Zephyr',
+      liveDemo: 'https://zephyrperfume.vercel.app/',
+      category: 'Online Store',
+      images: [zephyrHero, zephyrBestseller, zephyrFilters],
+      testimonial:
+        "From the first demo to going live, everything was smooth. The JazzCash checkout works flawlessly and the admin panel makes running Zephyr effortless.",
+    },
+    {
+      id: 'naqsh',
+      title: 'Naqsh — Bridal & Fashion Jewelry',
+      client: 'Mahnoor Javed',
+      description:
+        'A jewelry storefront built around occasion-based shopping — bridal, festive and everyday pieces filterable by style, color and budget, with guest checkout, PayFast payments and order tracking.',
+      technologies: ['React', 'Redux Toolkit', 'Node.js', 'MongoDB', 'PayFast'],
+      github: 'https://github.com/ibrahim123-sia/Naqsh',
+      liveDemo: 'https://naqshbynoor.vercel.app/',
+      category: 'Online Store',
+      images: [naqshHero, naqshWedding, naqshProduct],
+      testimonial:
+        "I was worried about handing my brand to a new studio, but the build-first approach removed all the risk. Naqsh's website turned out better than I imagined.",
+    },
+    {
+      id: 'nowhere',
+      title: 'Nowhere — Full-Stack Clothing Store',
+      client: 'Anita Hamid',
+      description:
+        'An end-to-end clothing platform with OTP-verified accounts, smart catalog filtering, cart and checkout, real-time order tracking, and role-based dashboards for customers and store admins.',
+      technologies: ['React', 'Express.js', 'MongoDB', 'JWT'],
+      github: 'https://github.com/ibrahim123-sia/Nowhere',
+      liveDemo: 'https://nowherecloth.vercel.app/',
+      category: 'Online Store',
+      images: [nowhereHero, nowhereBestseller, nowhereTopwear],
+      testimonial:
+        "Communication was clear from day one and nothing felt rushed. Nowhere's admin dashboard alone has saved me hours every week since launch.",
+    },
+  ],
+
   projects: [
     {
       id: 1,
@@ -156,17 +231,6 @@ export const siteData = {
     },
     {
       id: 4,
-      title: 'Nowhere — Full-Stack Online Store',
-      description:
-        'An end-to-end e-commerce platform with JWT auth, inventory management, shopping cart and an admin dashboard covering the full order lifecycle.',
-      image: Nowhere,
-      technologies: ['React', 'Express.js', 'MongoDB', 'JWT'],
-      github: 'https://github.com/ibrahim123-sia/Nowhere',
-      liveDemo: 'https://nowhere-7ouy-1r41sse88-ibrahims-projects-a1ce14e2.vercel.app',
-      category: 'Online Store',
-    },
-    {
-      id: 5,
       title: 'AI Learning Path Recommender',
       description:
         'An AI agent that generates personalized 4–6 week learning roadmaps, curating videos, articles and tutorials based on your goals, skills and availability.',
@@ -177,7 +241,7 @@ export const siteData = {
       category: 'AI Agent',
     },
     {
-      id: 6,
+      id: 5,
       title: 'Study Session Planner Assistant',
       description:
         'Transforms short-term academic goals into actionable 1–2 week study schedules — a balanced, day-by-day plan built from your exam, topics and availability.',
@@ -188,7 +252,7 @@ export const siteData = {
       category: 'AI Agent',
     },
     {
-      id: 7,
+      id: 6,
       title: 'Assortment Dashboard — Retail Analytics',
       description:
         'An intelligent product assortment dashboard applying Market Basket Analysis (Apriori / FP-Growth) and association rule mining to guide retail decisions.',
