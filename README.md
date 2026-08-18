@@ -77,13 +77,19 @@ To add a new client project to the site and automatically generate a case study 
 npm install
 ```
 
-### 2. Run Development Server
+### 2. Configure Environment Variables
+Copy `.env.example` to `.env.local` and set `RESEND_API_KEY` (from [resend.com](https://resend.com)) so the `/contact` form can deliver submissions by email. Until this is set, the contact API returns an error instead of silently dropping the message.
+```bash
+cp .env.example .env.local
+```
+
+### 3. Run Development Server
 ```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-### 3. Production Build
+### 4. Production Build
 ```bash
 npm run build
 ```
