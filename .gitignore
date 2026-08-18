@@ -1,18 +1,30 @@
 # Dependencies
 node_modules/
+/.pnp
+.pnp.js
 
-# Build output
+# Next.js build output
+.next/
+out/
 dist/
 dist-ssr/
+
+# Production
+build/
 
 # Env files
 .env
 .env.local
 .env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Editor / OS
 .vscode/*
@@ -20,11 +32,15 @@ npm-debug.log*
 .idea/
 .DS_Store
 Thumbs.db
+*.pem
 
-# Raw client assets (screenshots/links dump, not part of the built site)
+# Next.js telemetry / types
+next-env.d.ts
+
+# Raw client assets dump
 /Images/
 
-# AI tooling — never commit assistant config/context files
+# AI tooling
 .claude/
 CLAUDE.md
 .cursor/

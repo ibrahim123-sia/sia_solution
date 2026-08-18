@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-paper: #F7F6F3;
+    --bg-surface: #FFFFFF;
+    --text-charcoal: #241F1B;
+    --text-muted: #7C736A;
+    --border-hairline: #E5E3DD;
+    --accent-petrol: #16636A;
+    --accent-petrol-hover: #0E4A50;
+    --accent-petrol-tint: #E9F1F1;
+    --accent-live: #1E7A4B;
+  }
+
+  html {
+    background-color: var(--bg-paper);
+    color: var(--text-charcoal);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-paper);
+    color: var(--text-charcoal);
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Accessible visible focus rings: 2px petrol, 2px offset */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg-paper), 0 0 0 4px var(--accent-petrol);
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Custom utility for the looping browser frame scroll animation */
+@keyframes continuousScroll {
+  0% {
+    transform: translateY(0%);
+  }
+  45% {
+    transform: translateY(calc(-100% + 420px));
+  }
+  50% {
+    transform: translateY(calc(-100% + 420px));
+  }
+  95% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes continuousScrollMobile {
+  0% {
+    transform: translateY(0%);
+  }
+  45% {
+    transform: translateY(calc(-100% + 560px));
+  }
+  50% {
+    transform: translateY(calc(-100% + 560px));
+  }
+  95% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-browser-scroll {
+  animation: continuousScroll 16s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-browser-scroll:hover {
+  animation-play-state: paused;
+}
+
+.animate-phone-scroll {
+  animation: continuousScrollMobile 16s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-phone-scroll:hover {
+  animation-play-state: paused;
+}
