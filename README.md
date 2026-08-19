@@ -78,7 +78,7 @@ npm install
 ```
 
 ### 2. Configure Environment Variables
-Copy `.env.example` to `.env.local` and set `RESEND_API_KEY` (from [resend.com](https://resend.com)) so the `/contact` form can deliver submissions by email. Until this is set, the contact API returns an error instead of silently dropping the message.
+Copy `.env.example` to `.env.local` and set `GMAIL_USER` / `GMAIL_APP_PASSWORD` (a Google Account [App Password](https://myaccount.google.com/apppasswords)) so the `/contact` form can deliver submissions by email. Until this is set, the contact API returns an error instead of silently dropping the message.
 ```bash
 cp .env.example .env.local
 ```

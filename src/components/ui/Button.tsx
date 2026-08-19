@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { cn } from '@/lib/cn';
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -48,7 +49,7 @@ export function Button({
       'bg-transparent text-charcoal hover:bg-black/5 active:translate-y-[1px]',
   };
 
-  const combinedStyles = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
+  const combinedStyles = cn(baseStyles, sizeStyles[size], variantStyles[variant], className);
 
   if (href) {
     if (external) {

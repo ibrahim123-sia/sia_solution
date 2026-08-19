@@ -1,8 +1,17 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { siteConfig } from '@/content/site';
 
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+const transporter =
+  process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD
+    ? nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_APP_PASSWORD,
+        },
+      })
+    : null;
 
 export async function POST(request: Request) {
   try {
@@ -30,8 +39,8 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!resend) {
-      console.error('[Contact API] RESEND_API_KEY is not set — submission was not delivered.');
+    if (!transporter) {
+      console.error('[Contact API] GMAIL_USER / GMAIL_APP_PASSWORD is not set — submission was not delivered.');
       return NextResponse.json(
         { error: 'An error occurred while sending your message. Please try WhatsApp directly.' },
         { status: 500 }
@@ -39,28 +48,27 @@ export async function POST(request: Request) {
     }
 
     const submittedAt = new Date().toISOString();
-    const fromAddress = process.env.CONTACT_FROM_EMAIL || 'SIA Technologies <onboarding@resend.dev>';
     const toAddress = process.env.CONTACT_TO_EMAIL || siteConfig.email;
 
-    const { error } = await resend.emails.send({
-      from: fromAddress,
-      to: toAddress,
-      replyTo: email,
-      subject: `New inquiry from ${name}${service ? ` — ${service}` : ''}`,
-      text: [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Business: ${business || 'Not specified'}`,
-        `Service: ${service || 'General inquiry'}`,
-        `Submitted: ${submittedAt}`,
-        '',
-        'Message:',
-        message,
-      ].join('\n'),
-    });
-
-    if (error) {
-      console.error('[Contact API] Resend error', error);
+    try {
+      await transporter.sendMail({
+        from: `SIA Technologies <${process.env.GMAIL_USER}>`,
+        to: toAddress,
+        replyTo: email,
+        subject: `New inquiry from ${name}${service ? ` — ${service}` : ''}`,
+        text: [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Business: ${business || 'Not specified'}`,
+          `Service: ${service || 'General inquiry'}`,
+          `Submitted: ${submittedAt}`,
+          '',
+          'Message:',
+          message,
+        ].join('\n'),
+      });
+    } catch (sendError) {
+      console.error('[Contact API] Gmail SMTP error', sendError);
       return NextResponse.json(
         { error: 'An error occurred while sending your message. Please try WhatsApp directly.' },
         { status: 500 }

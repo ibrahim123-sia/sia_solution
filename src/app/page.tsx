@@ -71,15 +71,15 @@ export default function HomePage() {
           <div className="mt-14 md:mt-16">
             <div className="hidden sm:block">
               <BrowserFrame
-                imageSrc="/images/projects/naqsh-hero.jpeg"
-                imageAlt="Naqsh Bridal Jewelry Live Store"
-                urlDisplay="naqshbynoor.vercel.app"
+                imageSrc="/images/projects/nowhere-hero.jpeg"
+                imageAlt="Nowhere Apparel Live Store"
+                urlDisplay="nowherecloth.vercel.app"
               />
             </div>
             <div className="sm:hidden">
               <PhoneFrame
-                imageSrc="/images/projects/naqsh-product.jpeg"
-                imageAlt="Naqsh Mobile Store View"
+                imageSrc="/images/projects/nowhere-topwear.jpeg"
+                imageAlt="Nowhere Mobile Store View"
               />
             </div>
           </div>
