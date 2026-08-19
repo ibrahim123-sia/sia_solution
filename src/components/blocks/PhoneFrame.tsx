@@ -23,15 +23,13 @@ export function PhoneFrame({
 
       {/* Screen view */}
       <div className="relative h-[480px] sm:h-[560px] bg-paper overflow-hidden group">
-        <div className="relative w-full h-[1400px] animate-phone-scroll">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            sizes="320px"
-            className="object-cover object-top"
-          />
-        </div>
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          sizes="320px"
+          className="object-cover object-top"
+        />
       </div>
     </div>
   );

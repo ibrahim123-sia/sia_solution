@@ -43,23 +43,16 @@ export function BrowserFrame({
         </div>
       </div>
 
-      {/* Browser Content Area with Continuous CSS Scroll */}
+      {/* Browser Content Area */}
       <div className="relative h-[340px] sm:h-[420px] md:h-[480px] bg-paper overflow-hidden group cursor-pointer">
-        <div className="relative w-full h-[1200px] animate-browser-scroll">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            sizes="(max-width: 1200px) 100vw, 1000px"
-            className="object-cover object-top"
-            priority
-          />
-        </div>
-
-        {/* Hover Hint Overlay */}
-        <div className="absolute bottom-3 right-3 bg-charcoal/80 text-white text-[11px] px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none backdrop-blur-sm">
-          Scrolls on loop · Hover to pause
-        </div>
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 1200px) 100vw, 1000px"
+          className="object-cover object-top"
+          priority
+        />
       </div>
     </div>
   );
